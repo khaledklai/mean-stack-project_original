@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mean-express
+  labels:
+    app: mean-express
+  namespace: default
+
+spec:
+  type: ClusterIP
+  ports:
+  - port: 3000 # service port
+    protocol: TCP
+    targetPort: 3000 # container port
+
+  selector:
+    app: mean-express

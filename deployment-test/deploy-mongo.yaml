@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mean-mongo
+  labels:
+    app: mean-mongo
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mean-mongo
+  template:
+    metadata:
+      labels:
+        app: mean-mongo
+    spec:
+      containers:
+      - image: mongo
+        name: mean-mongo
